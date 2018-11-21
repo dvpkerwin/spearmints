@@ -34,9 +34,6 @@ herb = IO.PWM(13,100)
 herb.start(0)
 fan = IO.PWM(26,100)
 fan.start(0)
-cool = IO.PWM(19,100)
-cool.start(0)
-
 
 
 while 1 :
@@ -46,9 +43,9 @@ while 1 :
   elif inputStr==2:
        herb.ChangeDutyCycle(0);
   elif inputStr==3:
-       cool.ChangeDutyCycle(95);
+       IO.output(19,IO.HIGH)
   elif inputStr==4:
-       cool.ChangeDutyCycle(0);
+       IO.output(19,IO.LOW)
   elif inputStr==5:
        fan.ChangeDutyCycle(95);
   elif inputStr==6:
